@@ -1,0 +1,30 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Root 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+:root {
+
+    /* System Grid Values */
+
+    --padding: 1rem;
+    --gap: 1rem;
+    --width: calc((100cqi - 11 * var(--gap)) / 12);
+    --width-col-1: var(--width);
+    --width-col-2: calc(var(--width) * 2 + var(--gap));
+    --width-col-3: calc(var(--width) * 3 + 2 * var(--gap));
+    --width-col-4: calc(var(--width) * 4 + 3 * var(--gap));
+    --width-col-5: calc(var(--width) * 5 + 4 * var(--gap));
+    --width-col-6: calc(var(--width) * 6 + 5 * var(--gap));
+    --width-col-7: calc(var(--width) * 7 + 6 * var(--gap));
+    --width-col-8: calc(var(--width) * 8 + 7 * var(--gap));
+    --width-col-9: calc(var(--width) * 9 + 8 * var(--gap));
+    --width-col-10: calc(var(--width) * 10 + 9 * var(--gap));
+    --width-col-11: calc(var(--width) * 11 + 10 * var(--gap));
+    --width-col-12: 100%;
+
+    /* Reset Values */
+
+    --text-color: black;
+    --body-bg-color: white;
+}
