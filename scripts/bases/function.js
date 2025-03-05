@@ -3,3 +3,7 @@ const setClickSong = (element, soundSource) => {
         new Audio(soundSource).play();
     });
 }
+
+const hideLoading = () => {
+    loadingElem.style.display = "none"
+}

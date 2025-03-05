@@ -8,3 +8,7 @@ body {
     background-repeat: no-repeat;
     backdrop-filter: blur(30px);
 }
+
+.loading {
+    background-color: transparent;
+}

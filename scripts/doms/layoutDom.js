@@ -1,0 +1,1 @@
+const loadingElem = document.querySelector(".loading")
