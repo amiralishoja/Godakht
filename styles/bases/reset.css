@@ -20,11 +20,6 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    font-size: 1.6rem;
-    line-height: 1.4;
-}
-
 ul,
 ol {
     list-style: none;
@@ -54,4 +49,8 @@ body {
     color: var(--text-color);
     background-color: var(--body-bg-color);
     user-select: none;
+}
+
+body * {
+    font-family: var(--main-font);
 }

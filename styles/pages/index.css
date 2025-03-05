@@ -4,9 +4,9 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../bases/reset.css");
 @import url("../bases/fonts.css");
 @import url("../bases/root.css");
+@import url("../bases/reset.css");
 @import url("../bases/grid.css");
 
 /* 

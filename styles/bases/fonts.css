@@ -3,3 +3,16 @@
     Fonts 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
+
+@font-face {
+    font-family: 'atabay';
+    src: url('../../fonts/atabay/atabay.ttf');
+}
+
+@font-face {
+    font-family: "yakanBakh";
+    src: url('../../fonts/yekanBakh/yekanBakh.woff2') format('woff2'),
+        url('../../fonts/yekanBakh/yekanBakh.woff') format('woff'),
+        url('../../fonts/yekanBakh/yekanBakh.oet') format('oet'),
+        url('../../fonts/yekanBakh/yekanBakh.ttf');
+}
