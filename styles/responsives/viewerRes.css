@@ -44,4 +44,7 @@
     *, *::before, *::after {
         cursor: default !important;
     }
+    .logo__picture {
+        display: none;
+    }
 }

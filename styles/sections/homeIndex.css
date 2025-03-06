@@ -12,3 +12,17 @@ body {
 .loading {
     background-color: transparent;
 }
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+}
+
+.logo__title {
+    color: var(--body-bg-color);
+}
+
+.icon {
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+}

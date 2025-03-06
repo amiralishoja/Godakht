@@ -19,17 +19,32 @@
     <script src="../scripts/bases/layout.js" defer></script>
     <script src="../scripts/pages/viewer.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
     <title>گداخت</title>
 </head>
 
 <body dir="rtl">
+    <section class="loading">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron-alpha"></div>
+            <div class="electron-omega"></div>
+        </div>
+    </section>
+    <section class="navbar">
+        <div class="container container--navbar">
+            <div class="row row--navbar">
+                <div class="col-12 navbar__wrapper">
+                    <i class="ri-arrow-right-double-line icon navbar__icon--back"></i>
+                    <div class="navbar__logo">
+                        <img src="../pictures/logo.png" alt="Godakht" class="logo__picture">
+                        <h3 class="logo__title">گداخت</h3>
+                    </div>
+                    <i class="ri-moon-line ri-sun-line icon navbar__icon--theme"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-<section class="loading">
-    <div class="atom">
-        <div class="electron"></div>
-        <div class="electron-alpha"></div>
-        <div class="electron-omega"></div>
-    </div>
-</section>
 
 </html>
