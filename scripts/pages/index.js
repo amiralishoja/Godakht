@@ -1,0 +1,1 @@
+searchInputElem.addEventListener("keyup", searchInputKeypressHandler)

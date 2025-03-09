@@ -189,4 +189,5 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--body-bg-color);
+    z-index: 999;
 }
