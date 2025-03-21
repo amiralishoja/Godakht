@@ -108,3 +108,34 @@ const viewerElemClickHandler = event => {
     removeClass("viewer--active")
     event.currentTarget.classList.add("viewer--active")
 }
+
+const bankBaseSelectBoxChangeHandler = event => {
+    bankBaseValueChecker(+event.currentTarget.value)
+}
+
+const bankBaseValueChecker = number => {
+    if (number === 10) {
+        bankSeasonElemGenerator(3)
+    } else if (number === 11) {
+        bankSeasonElemGenerator(3)
+    } else if (number === 12) {
+        bankSeasonElemGenerator(4)
+    }
+}
+
+const bankSeasonElemGenerator = number => {
+    bankSeasonSelectBoxElem.innerHTML = ""
+    for (let i = 1; i <= number; i++) {
+        const optionElem = document.createElement("option")
+        optionElem.classList.add("bank__option")
+        optionElem.setAttribute("value", i)
+        optionElem.innerHTML = `فصل ${i}`        
+        bankSeasonSelectBoxElem.appendChild(optionElem)
+    }
+}
+
+const bankExamSubmitClickHandler = event => {
+    const baseExam = bankBaseSelectBoxElem.value
+    const seasonExam = bankSeasonSelectBoxElem.value
+    window.location.href = `pages/exam.html?base=${baseExam}&season=${seasonExam}`;
+}

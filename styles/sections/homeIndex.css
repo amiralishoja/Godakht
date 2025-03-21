@@ -44,7 +44,7 @@ body {
     height: 100%;
 }
 
-.main__wrapper {
+.viewer__wrapper {
     min-height: max-content;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(40px);
@@ -57,14 +57,14 @@ body {
     gap: calc(var(--gap) * 4);
 }
 
-.main__title {
+.viewer__title {
     font-size: 8rem;
     font-family: var(--title-font);
     color: var(--body-bg-color);
     text-align: center;
 }
 
-.main__search {
+.viewer__search {
     width: calc(100% - var(--padding) * 9);
     height: 6rem;
     background-color: var(--body-bg-color);
@@ -78,7 +78,7 @@ body {
     position: relative;
 }
 
-.search__select {
+.viewer__select {
     margin-top: 0.5rem;
     height: 100%;
     background-color: var(--body-bg-color);
@@ -89,22 +89,22 @@ body {
     padding-left: var(--gap);
 }
 
-.select__option {
+.viewer__option {
     font-size: 1.6rem;
 }
 
-.search__input {
+.viewer__input {
     margin-top: 0.5rem;
     height: 100%;
     width: 100%;
     font-size: 1.8rem;
 }
 
-.search__submit {}
+.viewer__submit {}
 
-.main__icon--search {}
+.viewer__icon--search {}
 
-.main__description {
+.viewer__description {
     color: var(--body-bg-color);
     font-size: 1.8rem;
     text-align: justify;
@@ -174,4 +174,69 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3.5rem;
     padding: 0 calc(var(--padding) / 2);
+}
+
+.bank__wrapper {
+    min-height: max-content;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    border-radius: 0.8rem;
+    padding: calc(var(--padding) * 2);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(var(--gap) * 4);
+}
+.bank__title {
+    font-size: 8rem;
+    font-family: var(--title-font);
+    color: var(--body-bg-color);
+    text-align: center;
+}
+.bank__search {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: var(--gap);
+}
+.search__title {
+    font-size: 2.2rem;
+    color: white;
+}
+.bank__select {
+    width: 100%;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    padding: calc(var(--padding) / 2) var(--padding);
+    cursor: pointer;
+}
+.bank__option {
+    font-size: 1.7rem;
+}
+
+.bank__submit {
+    margin-top: 1rem;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--gap) / 2);
+    background-color: lime;
+    border-radius: 0.5rem;
+}
+.submit__text {
+    font-size: 1.9rem;
+    color: white;
+    font-weight: 900;
+}
+.bank__icon--submit {
+    background-color: transparent;
+    color: white;
+    font-size: 3rem;
 }

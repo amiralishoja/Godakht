@@ -1,3 +1,6 @@
-const selectBoxElem = document.getElementById("selectBox")
+const selectBoxElem = document.getElementById("viewerSelectBox")
 const searchInputElem = document.getElementById("searchInput")
 const moleculesWrapperElem = document.getElementById("moleculesWrapper")
+const bankBaseSelectBoxElem = document.getElementById("bankBaseSelectBox")
+const bankSeasonSelectBoxElem = document.getElementById("bankSeasonSelectBox")
+const bankExamSubmitElem = document.getElementById("bankExamSubmit")
