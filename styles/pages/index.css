@@ -9,6 +9,7 @@
 @import url("../bases/reset.css");
 @import url("../bases/grid.css");
 @import url("../layout/navbar.css");
+@import url("../layout/footer.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -16,7 +17,7 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../sections/loading.css");
+@import url("../layout/loading.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

@@ -13,9 +13,14 @@ body {
     background-color: rgba(0, 0, 0, 0.95);
 }
 
-.navbar {
+.navbar,
+.footer {
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(20px);
+}
+
+.company__text {
+    color: white;
 }
 
 .logo__title {
@@ -26,7 +31,10 @@ body {
     background-color: var(--body-bg-color);
     color: var(--text-color);
 }
-
+.footer__icon {
+    color: white;
+    background-color: transparent;
+}
 .main {
     position: fixed;
     inset: 7rem 0 7rem 0;

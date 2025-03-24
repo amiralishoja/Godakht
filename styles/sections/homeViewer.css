@@ -16,6 +16,20 @@
     color: var(--body-bg-color);
 }
 
+.footer {
+    background-color: var(--body-bg-color);
+    box-shadow: 0 0.8rem 1rem 1rem rgb(235, 235, 235);
+    z-index: 998;}
+
+.footer__icon {
+    background-color: transparent;
+    color: black;
+}
+
+.creator__text {
+    color: black;
+}
+
 .main {
     position: fixed;
     inset: 7rem 0 7rem 0;
@@ -34,7 +48,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: calc(var(--gap) * 1.5);
+    gap: var(--gap);
 }
 .louise__wrapper {
     width: 100%;
@@ -76,6 +90,7 @@
     display: flex;
     flex-flow: row wrap;
     gap: var(--gap);
+    padding-bottom: var(--padding);
 }
 .viewer {
     background-color: var(--body-bg-color);
