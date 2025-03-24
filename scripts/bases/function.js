@@ -129,7 +129,7 @@ const bankSeasonElemGenerator = number => {
         const optionElem = document.createElement("option")
         optionElem.classList.add("bank__option")
         optionElem.setAttribute("value", i)
-        optionElem.innerHTML = `فصل ${i}`        
+        optionElem.innerHTML = `فصل ${checkSeasonExam(i)}`
         bankSeasonSelectBoxElem.appendChild(optionElem)
     }
 }
@@ -138,4 +138,154 @@ const bankExamSubmitClickHandler = event => {
     const baseExam = bankBaseSelectBoxElem.value
     const seasonExam = bankSeasonSelectBoxElem.value
     window.location.href = `pages/exam.html?base=${baseExam}&season=${seasonExam}`;
+}
+
+const showExam = (base, season) => {
+    showInformation(base, season)
+    showPdf(`../../exams/Q.${base}.${season}.pdf`, pdfContainerElem)
+    showChoice(answerDataBase[`A.${base}.${season}`].length)
+}
+
+const showInformation = (base, season) => {
+    const newBase = checkBaseExam(base)
+    const newSeason = checkSeasonExam(season)
+
+    pointInformationWrapper.innerHTML = `<h2 class="information__title">آزمون شیمی</h2>
+                        <h3 class="information__base">پایه ${newBase}</h3>
+                        <h3 class="information__season">فصل ${newSeason}</h3>`
+}
+
+const checkBaseExam = base => {
+    if (base === 10) {
+        return "دهم"
+    } else if (base === 11) {
+        return "یازدهم"
+    } else if (base === 12) {
+        return "دوازدهم"
+    }
+}
+
+const checkSeasonExam = season => {
+    if (season === 1) {
+        return "اول"
+    } else if (season === 2) {
+        return "دوم"
+    } else if (season === 3) {
+        return "سوم"
+    } else if (season === 4) {
+        return "چهارم"
+    }
+}
+
+const showPdf = (url, container) => {
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+        container.innerHTML = ""
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            pdf.getPage(pageNum).then(page => {
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+
+                const viewport = page.getViewport({ scale: 3.5 });
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                container.appendChild(canvas);
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                page.render(renderContext);
+            });
+        }
+    });
+}
+
+const showChoice = count => {
+    for (let i = 1; i <= count; i++) {
+        const numberElem = `<p class="case__number">${i}</p>`
+        caseNumberWrapperElem.innerHTML += numberElem
+        const caseElem = `<div class="point__case" data-number="${i}">
+                                        <div onclick="caseClickHandler(event)" class="case"><span>1</span></div>
+                                        <div onclick="caseClickHandler(event)" class="case"><span>2</span></div>
+                                        <div onclick="caseClickHandler(event)" class="case"><span>3</span></div>
+                                        <div onclick="caseClickHandler(event)" class="case"><span>4</span></div>
+                                    </div>`
+        casePointWrapperElem.innerHTML += caseElem
+    }
+}
+
+const caseClickHandler = event => {
+    if (event.currentTarget.classList.contains("case--choice")) {
+        event.currentTarget.classList.remove("case--choice")
+    } else {
+        [...event.currentTarget.parentElement.getElementsByClassName("case--choice")].forEach(item => {
+            item.classList.remove("case--choice")
+        })
+        event.currentTarget.classList.add("case--choice")
+    }
+}
+
+const caseSubmitClickHandler = event => {
+    const examResult = {};
+
+    [...casePointWrapperElem.children].forEach(elem => {
+        [...elem.children].forEach(choice => {
+            if (choice.classList.contains("case--choice")) {
+                examResult[elem.dataset.number] = +choice.firstElementChild.innerHTML
+            }
+        })
+    });
+
+    checkResultOfExam(examResult, answerDataBase, urlBaseExam, urlSeasonExam)
+    showPdf(`../../exams/A.${urlBaseExam}.${urlSeasonExam}.pdf`, pdfContainerElem)
+}
+
+const checkResultOfExam = (result, dataBase, base, season) => {
+    const answers = dataBase[`A.${base}.${season}`]
+
+    for (let i = 1; i <= answers.length; i++) {
+        if (result[i]) {
+            if (result[i] === answers[i - 1]) {
+                correctChoicedPointHandler(i)
+            } else {
+                wrongChoicedPointHandler(i,answers[i - 1])
+            }
+        } else {
+            notChoicedPointHandler(i, answers[i - 1])
+        }
+    };
+
+    [...casePointWrapperElem.children].forEach(point => {
+        [...point.children].forEach(caseItem => {
+            caseItem.removeAttribute("onclick")
+        });
+    })
+}
+
+
+const correctChoicedPointHandler = number => {
+    [...casePointWrapperElem.children].forEach(point => {
+        if (+point.dataset.number === number) {
+            point.querySelector(".case--choice").classList.add("case--correct")
+        }
+    })
+}
+
+const wrongChoicedPointHandler = (number, correctAnswer) => {
+    [...casePointWrapperElem.children].forEach(point => {
+        if (+point.dataset.number === number) {
+            point.querySelector(".case--choice").classList.add("case--wrong");
+            [...point.children][correctAnswer - 1].classList.add("case--choice");            
+        }
+    })
+}
+
+const notChoicedPointHandler = (number, correctAnswer) => {
+    [...casePointWrapperElem.children].forEach(point => {
+        if (+point.dataset.number === number) {
+            [...point.children][correctAnswer - 1].classList.add("case--choice");            
+        }
+    })
 }

@@ -1,6 +1,7 @@
 .navbar {
     background-color: var(--body-bg-color);
     box-shadow: 0 -0.8rem 1rem 1rem rgb(235, 235, 235);
+    z-index: 998;
 }
 
 .logo__title {

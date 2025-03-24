@@ -229,6 +229,7 @@ body {
     gap: calc(var(--gap) / 2);
     background-color: lime;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 .submit__text {
     font-size: 1.9rem;
