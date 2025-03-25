@@ -101,12 +101,21 @@ const viewerMoleculeElemGenerator = cid => {
         <div onclick="viewerElemClickHandler(event)" style="position: relative;" class='viewer_3Dmoljs viewer' data-cid="${cid}" data-style='sphere'
         data-backgroundcolor="white" data-spin='axis:y;speed:1'></div>
         <div onclick="viewerElemClickHandler(event)" style="position: relative;" class='viewer_3Dmoljs viewer' data-cid="${cid}" data-backgroundcolor="white"
-        data-spin='axis:y;speed:1' data-surface='opacity:0.9;' data-style='stick:radius=0.15;sphere:scale=0.25'></div>`
+        data-spin='axis:y;speed:1' data-surface='opacity:0.9;' data-style='stick:radius=0.15;sphere:scale=0.25'></div><i class="ri-close-large-line icon viewer__icon--close" onclick="viewerCloseIconElemHandler(event)"></i>`
 }
 
 const viewerElemClickHandler = event => {
-    removeClass("viewer--active")
-    event.currentTarget.classList.add("viewer--active")
+    if (event.currentTarget.classList.contains("viewer--active")) {
+        viewerWrapperElem.classList.add("viewer__wrapper--show")
+        spain(false)
+    } else {
+        removeClass("viewer--active")
+        event.currentTarget.classList.add("viewer--active")
+    }
+}
+
+const viewerCloseIconElemHandler = event => {
+    viewerWrapperElem.classList.remove("viewer__wrapper--show")
 }
 
 const bankBaseSelectBoxChangeHandler = event => {
