@@ -271,6 +271,8 @@ const checkResultOfExam = (result, dataBase, base, season) => {
             caseItem.removeAttribute("onclick")
         });
     })
+
+    caseSubmitElem.removeEventListener("click", caseSubmitClickHandler)
 }
 
 
