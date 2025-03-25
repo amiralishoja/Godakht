@@ -10,29 +10,29 @@ body {
 }
 
 .loading {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--body-bg-color);
 }
 
 .navbar,
 .footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--body-bg-color);
     backdrop-filter: blur(20px);
 }
 
 .company__text {
-    color: white;
+    color: var(--text-color);
 }
 
 .logo__title {
-    color: var(--body-bg-color);
+    color: var(--text-color);
 }
 
 .icon {
-    background-color: var(--body-bg-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--body-bg-color);
 }
 .footer__icon {
-    color: white;
+    color: var(--text-color);
     background-color: transparent;
 }
 .main {
@@ -54,7 +54,7 @@ body {
 
 .viewer__wrapper {
     min-height: max-content;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--body-bg-color);
     backdrop-filter: blur(40px);
     border-radius: 0.8rem;
     padding: calc(var(--padding) * 2);
@@ -68,14 +68,14 @@ body {
 .viewer__title {
     font-size: 8rem;
     font-family: var(--title-font);
-    color: var(--body-bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 
 .viewer__search {
     width: calc(100% - var(--padding) * 9);
     height: 6rem;
-    background-color: var(--body-bg-color);
+    background-color: var(--text-color);
     border-radius: 0.8rem;
     display: flex;
     flex-flow: row nowrap;
@@ -89,9 +89,9 @@ body {
 .viewer__select {
     margin-top: 0.5rem;
     height: 100%;
-    background-color: var(--body-bg-color);
+    background-color: var(--text-color);
     font-size: 1.7rem;
-    color: var(--text-color);
+    color: var(--body-bg-color);
     cursor: pointer;
     outline: none;
     padding-left: var(--gap);
@@ -106,6 +106,12 @@ body {
     height: 100%;
     width: 100%;
     font-size: 1.8rem;
+    background-color: var(--text-color);
+    color: var(--body-bg-color);
+}
+
+.viewer__input::placeholder {
+    color: var(--body-bg-color);
 }
 
 .viewer__submit {}
@@ -113,7 +119,7 @@ body {
 .viewer__icon--search {}
 
 .viewer__description {
-    color: var(--body-bg-color);
+    color: var(--text-color);
     font-size: 1.8rem;
     text-align: justify;
     text-align-last: center;
@@ -123,7 +129,7 @@ body {
 .main__molcules {
     position: absolute;
     inset: calc(100% + var(--gap)) 0 auto 0;
-    background-color: var(--body-bg-color);
+    background-color: var(--text-color);
     width: 100%;
     max-height: 16rem;
     z-index: 998;
@@ -150,6 +156,7 @@ body {
     box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 0, 0.3);
     border-radius: 0.8rem;
     padding: var(--padding);
+    cursor: pointer;
 }
 
 .molocule__details {
@@ -186,7 +193,7 @@ body {
 
 .bank__wrapper {
     min-height: max-content;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--body-bg-color);
     backdrop-filter: blur(40px);
     border-radius: 0.8rem;
     padding: calc(var(--padding) * 2);
@@ -199,7 +206,7 @@ body {
 .bank__title {
     font-size: 8rem;
     font-family: var(--title-font);
-    color: var(--body-bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 .bank__search {
@@ -213,7 +220,7 @@ body {
 }
 .search__title {
     font-size: 2.2rem;
-    color: white;
+    color: var(--text-color);
 }
 .bank__select {
     width: 100%;
@@ -221,6 +228,8 @@ body {
     border-radius: 0.5rem;
     padding: calc(var(--padding) / 2) var(--padding);
     cursor: pointer;
+    background-color: var(--text-color);
+    color: var(--body-bg-color);
 }
 .bank__option {
     font-size: 1.7rem;

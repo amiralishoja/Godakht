@@ -298,3 +298,28 @@ const notChoicedPointHandler = (number, correctAnswer) => {
         }
     })
 }
+
+const changeTheme = mode => {
+    document.documentElement.className = mode
+    if (mode === "light") {
+        changeThemeIcon("ri-moon-line")
+    } else if (mode === "dark") {
+        changeThemeIcon("ri-sun-line")
+    }
+
+    localStorage.setItem("theme", mode)
+}
+
+const changeThemeHandler = event => {
+    if (themeMode === "light") {
+        changeTheme("dark")
+        themeMode = "dark"
+    } else if (themeMode === "dark") {
+        changeTheme("light")
+        themeMode = "light"
+    }
+}
+
+const changeThemeIcon = classList => {
+    themeIconElem.className = `${classList} icon navbar__icon--theme`
+}

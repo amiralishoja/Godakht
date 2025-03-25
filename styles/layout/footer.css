@@ -35,7 +35,7 @@
     height: 100%;
 }
 .company__text {
-    color: black;
+    color: var(--text-color);
     font-size: 2rem;
 }
 .footer__creator {
@@ -47,7 +47,7 @@
     align-items: center;
 }
 .creator__text {
-    color: white;
+    color: var(--text-color);
     font-size: 2.2rem;
     font-weight: normal;
 }

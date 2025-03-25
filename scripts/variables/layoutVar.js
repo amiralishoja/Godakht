@@ -1,3 +1,4 @@
+let themeMode = localStorage.getItem("theme") ?? "light"
 const dataBase = [
     {
         name: "Water",

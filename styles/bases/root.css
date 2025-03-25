@@ -25,8 +25,16 @@
 
     /* Reset Values */
 
-    --text-color: black;
-    --body-bg-color: white;
     --main-font: "yakanBakh";
     --title-font: "atabay";
+}
+
+.light:root {
+    --text-color: black;
+    --body-bg-color: white;
+}
+
+.dark:root {
+    --text-color: white;
+    --body-bg-color: black;
 }
