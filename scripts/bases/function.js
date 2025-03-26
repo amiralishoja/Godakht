@@ -97,24 +97,25 @@ const removeClass = className => {
 
 const viewerMoleculeElemGenerator = cid => {
     viewerWrapperElem.innerHTML = `<div onclick="viewerElemClickHandler(event)" style="position: relative;" class='viewer_3Dmoljs viewer viewer--active' data-cid="${cid}"
-        data-style='stick:radius=0.15;sphere:scale=0.25' data-backgroundcolor="white" data-spin='axis:y;speed:1'></div>
+        data-style='stick:radius=0.15;sphere:scale=0.25' data-backgroundcolor="white" data-spin='axis:y;speed:1'><i class="ri-expand-diagonal-line icon viewer__icon--expand" onclick="expendViewerWindowHandler(event)"></i></div>
         <div onclick="viewerElemClickHandler(event)" style="position: relative;" class='viewer_3Dmoljs viewer' data-cid="${cid}" data-style='sphere'
-        data-backgroundcolor="white" data-spin='axis:y;speed:1'></div>
+        data-backgroundcolor="white" data-spin='axis:y;speed:1'><i class="ri-expand-diagonal-line icon viewer__icon--expand" onclick="expendViewerWindowHandler(event)"></i></div>
         <div onclick="viewerElemClickHandler(event)" style="position: relative;" class='viewer_3Dmoljs viewer' data-cid="${cid}" data-backgroundcolor="white"
-        data-spin='axis:y;speed:1' data-surface='opacity:0.9;' data-style='stick:radius=0.15;sphere:scale=0.25'></div><i class="ri-close-large-line icon viewer__icon--close" onclick="viewerCloseIconElemHandler(event)"></i>`
+        data-spin='axis:y;speed:1' data-surface='opacity:0.9;' data-style='stick:radius=0.15;sphere:scale=0.25'><i class="ri-expand-diagonal-line icon viewer__icon--expand" onclick="expendViewerWindowHandler(event)"></i></div><i class="ri-close-large-line icon viewer__icon--close" onclick="viewerCloseIconElemHandler(event)"></i>`
 }
 
 const viewerElemClickHandler = event => {
-    if (event.currentTarget.classList.contains("viewer--active")) {
-        viewerWrapperElem.classList.add("viewer__wrapper--show")
-        spain(false)
-    } else {
-        removeClass("viewer--active")
-        event.currentTarget.classList.add("viewer--active")
-    }
+    removeClass("viewer--active")
+    event.currentTarget.classList.add("viewer--active")
+}
+
+const expendViewerWindowHandler = event => {
+    event.currentTarget.style.display = "none"
+    viewerWrapperElem.classList.add("viewer__wrapper--show")
 }
 
 const viewerCloseIconElemHandler = event => {
+    document.querySelector(".viewer--active").firstElementChild.style.display = "flex"
     viewerWrapperElem.classList.remove("viewer__wrapper--show")
 }
 
@@ -259,7 +260,7 @@ const checkResultOfExam = (result, dataBase, base, season) => {
             if (result[i] === answers[i - 1]) {
                 correctChoicedPointHandler(i)
             } else {
-                wrongChoicedPointHandler(i,answers[i - 1])
+                wrongChoicedPointHandler(i, answers[i - 1])
             }
         } else {
             notChoicedPointHandler(i, answers[i - 1])
@@ -288,7 +289,7 @@ const wrongChoicedPointHandler = (number, correctAnswer) => {
     [...casePointWrapperElem.children].forEach(point => {
         if (+point.dataset.number === number) {
             point.querySelector(".case--choice").classList.add("case--wrong");
-            [...point.children][correctAnswer - 1].classList.add("case--choice");            
+            [...point.children][correctAnswer - 1].classList.add("case--choice");
         }
     })
 }
@@ -296,7 +297,7 @@ const wrongChoicedPointHandler = (number, correctAnswer) => {
 const notChoicedPointHandler = (number, correctAnswer) => {
     [...casePointWrapperElem.children].forEach(point => {
         if (+point.dataset.number === number) {
-            [...point.children][correctAnswer - 1].classList.add("case--choice");            
+            [...point.children][correctAnswer - 1].classList.add("case--choice");
         }
     })
 }

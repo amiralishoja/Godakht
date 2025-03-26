@@ -1,3 +1,12 @@
+body {
+    width: 100%;
+    min-height: 100svh;
+    height: max-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: calc(var(--gap) * 2);
+}
 .dark .navbar,
 .dark .footer,
 .dark .point__information,
@@ -46,8 +55,9 @@
 }
 
 .main {
-    position: fixed;
-    inset: 7rem 0 7rem 0;
+    width: 100%;
+    min-height: calc(97svh - (7rem * 2 + var(--gap) * 2));
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,11 +72,11 @@
 }
 
 .point__wrapper {
-    height: 100%;
+    position: relative;
+    height: calc(100cqh - 7rem * 2 - var(--padding) * 2 - var(--gap) * 4);
     display: flex;
     flex-flow: column nowrap;
     gap: var(--gap);
-    position: relative;
     border-radius: 1.5rem;
     overflow: hidden;
 }
@@ -114,6 +124,7 @@
     gap: var(--gap);
     padding: var(--padding);
     padding-bottom: calc(5rem + var(--padding));
+    /* position: relative; */
 }
 
 .case__wrapper::-webkit-scrollbar {
@@ -263,7 +274,7 @@
 }
 
 .pdf__wrapper {
-    height: 100%;    
+    height: calc(100cqh - 7rem * 2 - var(--padding) * 2 - var(--gap) * 4);
     overflow-y: auto;
     border-radius: 1.5rem;
     display: flex;

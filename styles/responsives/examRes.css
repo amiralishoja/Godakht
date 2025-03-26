@@ -23,7 +23,29 @@
 */
 
 @media (max-width: 992px) {
-    
+    .row--main {
+        padding-top: calc(17.2rem + var(--gap));
+        flex-direction: column-reverse;
+        gap: calc(var(--gap) * 2);
+    }
+    .point__wrapper {
+        position: static;
+    }
+    .point__information {
+        position: absolute;
+        inset: 0 var(--padding) auto var(--padding);
+        width: calc(100% - var(--padding) * 2);
+    }
+    .case__submit {
+        right: var(--padding);
+        left: var(--padding);
+        width: calc(100% - var(--padding) * 2);
+        border-bottom-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+    .case__wrapper {
+        padding-bottom: calc(4rem + var(--padding));
+    }
 }
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

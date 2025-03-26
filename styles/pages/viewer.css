@@ -33,6 +33,7 @@ Import Sections Style
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
+@import url("../responsives/layoutRes.css");
 @import url("../responsives/viewerRes.css");
 
 /* 
