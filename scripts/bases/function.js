@@ -1,5 +1,5 @@
 const setClickSong = () => {
-    new Audio("../musics/click.mp3").play();
+    new Audio("musics/click.mp3").play();
 }
 
 const hideLoading = () => {
