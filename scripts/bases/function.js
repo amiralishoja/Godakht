@@ -1,7 +1,5 @@
-const setClickSong = (element, soundSource) => {
-    element.addEventListener("click", function () {
-        new Audio(soundSource).play();
-    });
+const setClickSong = () => {
+    new Audio("../musics/click.mp3").play();
 }
 
 const hideLoading = () => {
@@ -41,8 +39,11 @@ const moleculeElemGenerator = (molecules) => {
 }
 
 const moleculeElemClickHandler = event => {
+    setClickSong()
     const moleculeId = event.currentTarget.dataset.cid
-    window.location.href = `pages/viewer.html?cid=${moleculeId}`;
+    setTimeout(() => {
+        window.location.href = `pages/viewer.html?cid=${moleculeId}`;
+    }, 500);
 }
 
 const showMolecule = cid => {
@@ -105,6 +106,7 @@ const viewerMoleculeElemGenerator = cid => {
 }
 
 const viewerElemClickHandler = event => {
+    setClickSong()
     removeClass("viewer--active")
     event.currentTarget.classList.add("viewer--active")
 }
@@ -115,6 +117,7 @@ const expendViewerWindowHandler = event => {
 }
 
 const viewerCloseIconElemHandler = event => {
+    setClickSong()
     document.querySelector(".viewer--active").firstElementChild.style.display = "flex"
     viewerWrapperElem.classList.remove("viewer__wrapper--show")
 }
@@ -275,6 +278,9 @@ const checkResultOfExam = (result, dataBase, base, season) => {
     })
 
     caseSubmitElem.removeEventListener("click", caseSubmitClickHandler)
+    setTimeout(() => {
+        caseSubmitElem.removeEventListener("click", setClickSong)
+    }, 500);
 }
 
 
