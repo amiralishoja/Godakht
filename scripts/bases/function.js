@@ -1,5 +1,10 @@
 const setClickSong = () => {
-    new Audio("musics/click.mp3").play();
+    if (window.location.pathname === "/index.html") {
+        new Audio("musics/click.mp3").play();
+    } else {
+        new Audio("../musics/click.mp3").play();
+    }
+    
 }
 
 const hideLoading = () => {
