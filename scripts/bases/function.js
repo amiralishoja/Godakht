@@ -188,7 +188,7 @@ const checkSeasonExam = season => {
 }
 
 const showPdf = (url, container) => {
-    const newUrl = `https://godakht.s3.ir-thr-at1.arvanstorage.ir/${url}`
+    const newUrl = `exam/${url}`
     pdfjsLib.getDocument(newUrl).promise.then(pdf => {
         container.innerHTML = ""
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
