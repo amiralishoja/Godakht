@@ -1,5 +1,5 @@
-const setClickSong = () => {
-    if (window.location.pathname === "/index.html") {
+const setClickSong = () => {    
+    if (window.location.pathname.indexOf("index.html") !== -1) {
         new Audio("musics/click.mp3").play();
     } else {
         new Audio("../musics/click.mp3").play();
