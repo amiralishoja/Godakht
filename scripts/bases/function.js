@@ -152,7 +152,7 @@ const bankExamSubmitClickHandler = event => {
 
 const showExam = (base, season) => {
     showInformation(base, season)
-    showPdf(`../../exams/Q.${base}.${season}.pdf`, pdfContainerElem)
+    showPdf(`Q.${base}.${season}.pdf`, pdfContainerElem)
     showChoice(answerDataBase[`A.${base}.${season}`].length)
 }
 
@@ -188,7 +188,8 @@ const checkSeasonExam = season => {
 }
 
 const showPdf = (url, container) => {
-    pdfjsLib.getDocument(url).promise.then(pdf => {
+    const newUrl = `https://godakht.s3.ir-thr-at1.arvanstorage.ir/${url}`
+    pdfjsLib.getDocument(newUrl).promise.then(pdf => {
         container.innerHTML = ""
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
             pdf.getPage(pageNum).then(page => {
@@ -249,7 +250,7 @@ const caseSubmitClickHandler = event => {
     });
 
     checkResultOfExam(examResult, answerDataBase, urlBaseExam, urlSeasonExam)
-    showPdf(`../../exams/A.${urlBaseExam}.${urlSeasonExam}.pdf`, pdfContainerElem)
+    showPdf(`A.${urlBaseExam}.${urlSeasonExam}.pdf`, pdfContainerElem)
 }
 
 const checkResultOfExam = (result, dataBase, base, season) => {
