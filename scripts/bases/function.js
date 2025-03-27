@@ -188,7 +188,7 @@ const checkSeasonExam = season => {
 }
 
 const showPdf = (url, container) => {
-    const newUrl = `../exam/${url}`
+    const newUrl = `../exams/${url}`
     pdfjsLib.getDocument(newUrl).promise.then(pdf => {
         container.innerHTML = ""
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
