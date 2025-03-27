@@ -1,4 +1,6 @@
-showExam(urlBaseExam, urlSeasonExam)
+window.addEventListener("DOMContentLoaded", () => {
+    showExam(urlBaseExam, urlSeasonExam)
+})
 caseSubmitElem.addEventListener("click", caseSubmitClickHandler)
 caseSubmitElem.addEventListener("click", setClickSong)
 casePointWrapperElem.addEventListener("click", event => {

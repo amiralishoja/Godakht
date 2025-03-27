@@ -1,1 +1,3 @@
-showMolecule(moleculeCid)
+window.addEventListener("DOMContentLoaded", () => {
+    showMolecule(moleculeCid)
+})

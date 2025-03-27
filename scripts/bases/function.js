@@ -8,7 +8,9 @@ const setClickSong = () => {
 }
 
 const hideLoading = () => {
-    loadingElem.style.display = "none"
+    setTimeout(() => {
+        loadingElem.style.display = "none"
+    }, 1500);
 }
 
 const searchInputKeypressHandler = event => {

@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", hideLoading)
+window.addEventListener("load", hideLoading)
 changeTheme(themeMode)
 themeIconElem.addEventListener("click", changeThemeHandler)
 themeIconElem.addEventListener("click", setClickSong)
