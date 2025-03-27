@@ -608,7 +608,7 @@ const dataBase = [
         cid: 4,
         translate: "وازلین",
         iupacName: "petrolatum",
-        molecularFormula: "مخلوط هیدروکربن‌ها",
+        molecularFormula: "C25H52",
         smiles: "ندارد",
         molecularWeight: "متغیر",
         isotopeAtomCount: 0,

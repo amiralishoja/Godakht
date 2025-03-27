@@ -1,0 +1,1 @@
+const louiseWrapperElem=document.getElementById("louiseWrapper"),informationWrapperElem=document.getElementById("informationWrapper"),viewerWrapperElem=document.getElementById("viewerWrapper"),urlParams=new URLSearchParams(window.location.search),moleculeCid=+urlParams.get("cid");window.addEventListener("DOMContentLoaded",(()=>{showMolecule(moleculeCid)}));

@@ -1,0 +1,1 @@
+const loadingElem=document.querySelector(".loading"),navbarBackIconElem=document.getElementById("navbarBackIcon"),themeIconElem=document.getElementById("themeIcon");

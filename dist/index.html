@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang=fa>
+<head>
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=google content=notranslate>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=apple-touch-icon sizes=180x180 href=pictures/favicon/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=pictures/favicon/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=pictures/favicon/favicon-16x16.png>
+<link rel=manifest href=pictures/favicon/site.webmanifest>
+<link rel=stylesheet href=styles/index.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css>
+<script src=scripts/doms/layoutDom.js defer></script>
+<script src=scripts/variables/layoutVar.js defer></script>
+<script src=scripts/bases/function.js defer></script>
+<script src=scripts/bases/layout.js defer></script>
+<script src=scripts/pages/index.js defer></script>
+<script src=scripts/bases/howler.min.js></script>
+<title>گداخت</title>
+</head>
+<body dir=rtl>
+<section class=loading>
+<div class=atom>
+<div class=electron></div>
+<div class=electron-alpha></div>
+<div class=electron-omega></div>
+</div>
+</section>
+<section class=navbar>
+<div class="container container--navbar">
+<div class="row row--navbar">
+<div class="col-12 navbar__wrapper">
+<i id=navbarBackIcon class="ri-arrow-right-double-line icon navbar__icon--back" style=display:none></i>
+<div class=navbar__logo>
+<img src=pictures/logo.png alt=Godakht class=logo__picture>
+<h3 class=logo__title>گداخت</h3>
+</div>
+<i id=themeIcon class="ri-moon-line ri-sun-line icon navbar__icon--theme"></i>
+</div>
+</div>
+</div>
+</section>
+<section class=main>
+<div class="container container--main">
+<div class="row row--main">
+<div class="col-12 col-md-8 col-xxl-9 viewer__wrapper">
+<h1 class=viewer__title>به سوی بی کران و فراتر از آن</h1>
+<div class=viewer__search>
+<select id=viewerSelectBox class=viewer__select>
+<option class=viewer__option value=translate>بر اساس نام فارسی</option>
+<option class=viewer__option value=name>بر اساس نام انگلیسی</option>
+<option class=viewer__option value=iupacName>بر اساس نام آیوپاک</option>
+<option class=viewer__option value=molecularFormula>بر اساس فرمول مولکولی</option>
+<option class=viewer__option value=smiles>بر اساس فرمول نمایش</option>
+</select>
+<input id=searchInput class=viewer__input placeholder="عبارت مورد نظر را وارد کنید ...">
+<i class="ri-search-2-line icon viewer__icon--search"></i>
+<div id=moleculesWrapper class=main__molcules></div>
+</div>
+<p class=viewer__description>گداخت یک شبیه ساز سه بعدی مولکولی است که قادر به نمایش اطلاعات مولکولی و مدل های سه بعدی مختلف است.در این شبیه ساز مدل های سه بعدی مختلفی مانند نقشه الکترواستاتیکی، ساختار گلوله و میله، ساختار لووییس و ساختار فضا پر کن است.همچنین برخی اطلاعات مانند چگالی، فرمول مولکولی، نقطه جوش، نقطه ذوب و ... برای 67 ترکیب شیمی مهم برای متوسطه دوم به صورت تقریبی قرار گرفته است.</p>
+</div>
+<div class="col-12 col-md-4 col-xxl-3 bank__wrapper">
+<h1 class=bank__title>آزمون بده</h1>
+<div class=bank__search>
+<h4 class=search__title>انتخاب پایه</h4>
+<select id=bankBaseSelectBox class=bank__select>
+<option class=bank__option value=10>دهم</option>
+<option class=bank__option value=11>یازدهم</option>
+<option class=bank__option value=12>دوازدهم</option>
+</select>
+<h4 class=search__title>انتخاب فصل</h4>
+<select id=bankSeasonSelectBox class=bank__select>
+</select>
+<div id=bankExamSubmit class=bank__submit>
+<i class="ri-quill-pen-line icon bank__icon--submit"></i>
+<span class=submit__text>شروع آزمون</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=footer>
+<div class="container container--footer">
+<div class="row row--footer">
+<div class="col-12 footer__wrapper">
+<div class=footer__company>
+<img src=pictures/company.png alt="" class=company__logo>
+<p class=company__text>بیست و سومین دوره مسابقات آزمایشگاهی علوم تجربی</p>
+</div>
+<div class=footer__creator>
+<h3 class=creator__text>سازنده : امیرعلی شجاع</h3>
+<a href=https://shoja.liara.run class=footer__link><i class="ri-link icon footer__icon"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
