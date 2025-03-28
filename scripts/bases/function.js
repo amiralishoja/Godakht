@@ -9,7 +9,7 @@ const setClickSong = () => {
 
 const hideLoading = () => {
     setTimeout(() => {
-        loadingElem.style.display = "none"
+        loadingElem.classList.add("loading--hide")
     }, 1500);
 }
 

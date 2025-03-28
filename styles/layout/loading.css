@@ -21,6 +21,7 @@ body {
     display: grid;
     place-items: center;
     box-sizing: border-box;
+    overflow: hidden;
 }
 *, *:before, *::after { box-sizing: border-box; }
 
@@ -189,4 +190,13 @@ body {
     align-items: center;
     background-color: var(--body-bg-color);
     z-index: 1000;
+}
+
+.loading--hide {
+    display: none;
+}
+
+:has(.loading--hide) body {
+    height: max-content;
+    overflow-y: auto;
 }
