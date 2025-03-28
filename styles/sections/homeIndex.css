@@ -173,7 +173,7 @@ body {
     gap: var(--gap);
     line-height: 1.6;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     text-overflow: ellipsis;
     scrollbar-width: none;
