@@ -282,7 +282,7 @@ body {
 }
 
 .light .pdf__wrapper {
-    box-shadow: 0 -0.8rem 1rem 1rem rgb(235, 235, 235);
+    box-shadow: 0 0 1rem 0 rgb(235, 235, 235);
 }
 
 .pdf__wrapper::-webkit-scrollbar {
