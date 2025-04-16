@@ -1,16 +1,19 @@
 
 # Godakht Project
 
-There is Godakht a chemistry tool for students
-
 ![Logo](https://github.com/amiralishoja/Godakht/blob/main/dist/pictures/favicon/android-chrome-192x192.png?raw=true)
 
+## There is Godakht a chemistry tool for students
+
+- Windows version working on windows 8.1 10 11
+- Android version working on android 5 and after that
 
 ## Lessons Learned
 
 - Git
 - 3Dmol js
 - RDKit js
+- Pdf js
 - Navtivefier
 - Kodular
 - NSIS
